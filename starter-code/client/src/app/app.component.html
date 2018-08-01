@@ -1,0 +1,4 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<li *ngIf="sessionService.user"><a [routerLink]="['/']"(click)="logout()">Logout</a></li>
+<br>
+<router-outlet></router-outlet>
