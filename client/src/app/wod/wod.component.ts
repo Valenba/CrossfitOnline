@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "../../../node_modules/@angular/router";
+import { CompetitionService } from "../../services/competition.service";
 
 @Component({
-  selector: 'app-wod',
-  templateUrl: './wod.component.html',
-  styleUrls: ['./wod.component.scss']
+  selector: "app-wod",
+  templateUrl: "./wod.component.html",
+  styleUrls: ["./wod.component.scss"]
 })
 export class WodComponent implements OnInit {
+  wod;
+  
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(
+    private route: ActivatedRoute,
+    private competitionService: CompetitionService,
+    private router: Router,
+  ) {
+    this.route.params.subscribe(params => {
+      this.competitionService.get(params.id).subscribe(wod => {
+        this.wod = wod;
+      });
+    });
   }
 
-}
+  ngOnInit() {}
+
+  deleteWod() {
+    this.competitionService
+      .remove(this.wod._id)
+      .subscribe(() => this.router.navigate([""]));
+  }
+ }

@@ -11,6 +11,7 @@ import { CompetidoresComponent } from './competidores/competidores.component';
 import { routes } from './routes';
 import { InformationComponent } from './information/information.component';
 import { WodComponent } from './wod/wod.component';
+import { WodNewComponent } from './wod-new/wod-new.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { WodComponent } from './wod/wod.component';
     LandingPageComponent,
     CompetidoresComponent,
     InformationComponent,
-    WodComponent
+    WodComponent,
+    WodNewComponent
   ],
   imports: [
     BrowserModule,

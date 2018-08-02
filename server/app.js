@@ -64,6 +64,9 @@ app.use("/", index);
 const api = require("./routes/api/authentication.controller")
 app.use("/api",api)
 
+const competition = require("./routes/api/competition.controller")
+app.use("/api/competition",competition)
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error("Not Found");
@@ -74,6 +77,7 @@ app.use((req, res, next) => {
 // error handler
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
+  console.log(err.message)
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 

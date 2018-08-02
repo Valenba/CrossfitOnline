@@ -1,3 +1,14 @@
 <a [routerLink]="['/information']">Information</a>
+
+<div>
+    <div class="wod" *ngFor="let wod of wods">
+      <a [routerLink]="['/wod/:id',wod._id]">
+      </a>
+      <h3> {{ wod.title }} </h3>
+      <div class="wod" *ngFor="let video of wod.wod">
+      <p> {{ video.video }} </p>
+      </div>
+    </div>
+  </div>
 <br>
-<a [routerLink]="['/wod']">WOD</a>
+<a [routerLink]="['/wod/:id']">WOD</a>

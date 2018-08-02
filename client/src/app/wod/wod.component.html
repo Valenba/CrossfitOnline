@@ -1,3 +1,14 @@
-<p>
-  wod works!
-</p>
+<h1> Detalles del WOD </h1>
+<a [routerLink]="['']"> Volver a home </a>
+
+<div *ngIf="wod">
+  <div class="wod">
+  </div>
+
+  <div class="wod-info">
+    <h2> {{ wod.video }}&nbsp;</h2>
+    <h3> {{ wod.wodNumer }} </h3>
+  </div>
+     <!-- <a [routerLink]="['/edit',phone._id]">Editar WOD</a> -->
+  <button (click)="deleteWod()"> Borrar WOD </button>
+</div>

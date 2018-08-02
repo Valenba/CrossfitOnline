@@ -1,0 +1,15 @@
+<h1> Añade una nueva competición </h1>
+<a [routerLink]="['/areaCompetidores']"> Vuelve a la lista</a>
+
+<form #form = "ngForm">
+    <label> Tìtulo </label>
+    <input type="text" #title name="title" required />
+
+    <label> Vídeo explicativo </label>
+    <input type="text" #video name="video" />
+
+    <label> Número de Wod: </label>
+    <input type="number"  #wodNumber name="wodNumber" required/>
+
+  <button (click)="submit(title.value, video.value, wodNumber.value)"> Guardar </button>
+</form>

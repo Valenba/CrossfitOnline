@@ -4,15 +4,17 @@ const Schema   = mongoose.Schema;
 const CompetitionSchema = new Schema({
   title: {
     type: String,
-    required: [true, "Email is required"]
+    required: [true, "Title is required"]
   },
+  wod:[{
   video: {
     type: String,
   },
-  wod: {
+  wodNumber: {
     type: Number,
-    required: [true, "Password is required"]
+    required: [true, "Wod is required"]
   }
+  }]
 });
 
 
