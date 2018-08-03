@@ -7,6 +7,8 @@ import { CompetitionService } from "../../services/competition.service";
   templateUrl: "./wod.component.html",
   styleUrls: ["./wod.component.scss"]
 })
+
+
 export class WodComponent implements OnInit {
   wod;
   
@@ -16,6 +18,10 @@ export class WodComponent implements OnInit {
     private competitionService: CompetitionService,
     private router: Router,
   ) {
+    
+  }
+
+  ngOnInit() {
     this.route.params.subscribe(params => {
       this.competitionService.get(params.id).subscribe(wod => {
         this.wod = wod;
@@ -23,11 +29,14 @@ export class WodComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
-
   deleteWod() {
     this.competitionService
       .remove(this.wod._id)
-      .subscribe(() => this.router.navigate([""]));
+      .subscribe(() => this.router.navigate(["/areaCompetidores"]));
   }
- }
+
+  videoURL() {
+    return this.wod[0].video;
+  }
+
+}

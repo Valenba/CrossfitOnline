@@ -12,6 +12,7 @@ import { routes } from './routes';
 import { InformationComponent } from './information/information.component';
 import { WodComponent } from './wod/wod.component';
 import { WodNewComponent } from './wod-new/wod-new.component';
+import { SafePipe } from './safe.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { WodNewComponent } from './wod-new/wod-new.component';
     CompetidoresComponent,
     InformationComponent,
     WodComponent,
-    WodNewComponent
+    WodNewComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

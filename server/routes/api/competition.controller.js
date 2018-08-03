@@ -15,7 +15,9 @@ router.post("/", (req, res, next) => {
 
   const newCompetition = { title, video, wod };
 
-  console.log(newCompetition)
+  newCompetition.wod[0].video = newCompetition.wod[0].video.replace('watch?v=', 'embed/');
+  console.log(newCompetition.video);
+  console.log(newCompetition);
 
   Competition.create(newCompetition)
     .then(object => res.json(object))
@@ -25,7 +27,8 @@ router.post("/", (req, res, next) => {
 // Retrive DETAIL
 router.get("/:id", (req, res, next) => {
   Competition.findById(req.params.id)
-    .then(object => res.json(object))
+    .then(object => {console.log(object)
+      res.json(object)})
     .catch(e => next(e));
 });
 

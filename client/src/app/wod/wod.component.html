@@ -1,14 +1,12 @@
-<h1> Detalles del WOD </h1>
+<h1> Detalles del WOD</h1>
 <a [routerLink]="['']"> Volver a home </a>
 
 <div *ngIf="wod">
-  <div class="wod">
+  <h2> {{ wod.title }}&nbsp;</h2>
+  <h3> {{ wod.wod[0].wodNumber }} </h3>
+  <div class="wod-info" *ngFor="let wod of wod.wod">
+      <iframe [src]="wod.video | safe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
   </div>
-
-  <div class="wod-info">
-    <h2> {{ wod.video }}&nbsp;</h2>
-    <h3> {{ wod.wodNumer }} </h3>
-  </div>
-     <!-- <a [routerLink]="['/edit',phone._id]">Editar WOD</a> -->
+  <!-- <a [routerLink]="['/edit',phone._id]">Editar WOD</a> -->
   <button (click)="deleteWod()"> Borrar WOD </button>
 </div>

@@ -16,7 +16,6 @@ export class CompetidoresComponent implements OnInit {
   
   ngOnInit() {
     this.competitionService.getList().subscribe(data => {
-      console.log(data)
       this.wods = data
     });
   }

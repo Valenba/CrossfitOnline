@@ -23,7 +23,7 @@ export class WodNewComponent implements OnInit {
     this.newCompetition.title = title;
     this.newCompetition.wod.push({video:video, wodNumber:Number(wodNumber)})
     console.log()
-    this.competitionService.newCompetition(this.newCompetition).subscribe(() => this.router.navigate(["/"]))
+    this.competitionService.newCompetition(this.newCompetition).subscribe(() => this.router.navigate(["/areaCompetidores"]))
   }
 
 
