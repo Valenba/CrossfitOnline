@@ -13,6 +13,24 @@ import { InformationComponent } from './information/information.component';
 import { WodComponent } from './wod/wod.component';
 import { WodNewComponent } from './wod-new/wod-new.component';
 import { SafePipe } from './safe.pipe';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+} from "angular5-social-login";
+
+
+// Configs 
+export function getAuthServiceConfigs() {
+let config = new AuthServiceConfig(
+    [
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider("167845067246-hmbn7jppmn6vnp6nad96ln5glqefcddh.apps.googleusercontent.com")
+      },
+    ]);
+return config;
+}
 
 
 @NgModule({
@@ -31,9 +49,15 @@ import { SafePipe } from './safe.pipe';
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,14 @@
+.navbar-brand {        
+    color: #f9d132;
+}
+.nav-link{
+    color: #f9d132;
+}
+nav{
+    background-color: black;
+}
+@media (max-width: 260px) {
+    .navbar-link{
+display: none;
+    }
+}

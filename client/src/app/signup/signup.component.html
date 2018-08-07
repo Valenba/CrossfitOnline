@@ -11,5 +11,9 @@
  
 
   <button (click)="signup(username, password,email)"> SIGNUP </button>
+  <h1>
+      Sign in
+ </h1>  
+ <button (click)="socialSignIn('google')">Signin in with Google</button>              
 </form>
 <p class="error"> {{ error }} </p>

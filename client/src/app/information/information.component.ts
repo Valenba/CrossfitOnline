@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InformationService } from '../../services/information.service';
 
 @Component({
   selector: 'app-information',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./information.component.scss']
 })
 export class InformationComponent implements OnInit {
+  information: Array<Object>;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private informationService : InformationService) { 
   }
+  
+  ngOnInit() {
 
+  }
+  athletes(name){
+    this.informationService.getByName(name).subscribe(athletes=>(this.information = athletes))
+  }
 }

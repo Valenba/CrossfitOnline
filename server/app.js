@@ -67,8 +67,9 @@ app.use("/api",api)
 const competition = require("./routes/api/competition.controller")
 app.use("/api/competition",competition)
 
-// const video = require("./routes/api/video.controller")
-// app.use("/api/video",video)
+const information = require("./routes/api/information.controller")
+app.use("/api/information",information)
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

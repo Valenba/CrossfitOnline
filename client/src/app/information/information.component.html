@@ -1,3 +1,9 @@
-<p>
-  information works!
-</p>
+<h1>Crossfit info</h1>
+<label> Name of athlete </label>
+<ul *ngIf="information">  
+  <li *ngFor= "let athlete of information">
+    {{athlete.name}} -- {{athlete.affiliate}}
+  </li>
+</ul>
+<button (click)="athletes(name)" id="crossfitButton">Get Athletes!</button>
+<input type="text" [(ngModel)]="name" name="name">

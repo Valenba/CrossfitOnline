@@ -1,4 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<li *ngIf="sessionService.user"><a [routerLink]="['/']"(click)="logout()">Logout</a></li>
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/']">Crossfit</a>
+            <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a [routerLink]="['/login']" class="nav-link"><i class="nc-icon nc-layout-11"></i>Login</a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['/signup']" class="nav-link"><i class="nc-icon nc-book-bookmark"></i> Signup</a>
+                </li>
+                <li *ngIf="sessionService.user" class="nav-item">
+                <a [routerLink]="['/']" class="nav-link" (click)="logout()"><i class="nc-icon nc-book-bookmark"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <br>
 <router-outlet></router-outlet>

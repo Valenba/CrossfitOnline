@@ -35,8 +35,4 @@ export class WodComponent implements OnInit {
       .subscribe(() => this.router.navigate(["/areaCompetidores"]));
   }
 
-  videoURL() {
-    return this.wod[0].video;
-  }
-
 }

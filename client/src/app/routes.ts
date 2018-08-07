@@ -11,16 +11,14 @@ import { WodNewComponent } from './wod-new/wod-new.component';
 
 
 export const routes: Routes = [
-  {path: '', redirectTo:'home', pathMatch:'full'},
-  {path:'home', component:LandingPageComponent},
+  { path: '', redirectTo:'home', pathMatch:'full'},
+  { path:'home', component:LandingPageComponent},
   { path:'signup', component:SignupComponent},
   { path:'login', component:LoginComponent},
   { path:'areaCompetidores', component:CompetidoresComponent },
   { path:'information', component:InformationComponent},
   { path:'wod/:id', component:WodComponent},
   { path: 'new', component: WodNewComponent},
-  // { path: 'phone/:id', component: PhoneDetailComponent },
-  // { path: 'edit/:id', component: PhoneEditComponent }
 
   //Youtube:AIzaSyBhtaKmsGu2d3zHkQeGK6vx9niDgnZkYNo
   //Crossfit API: https://www.reddit.com/r/crossfit/comments/7vfe5d/crossfit_open_leaderboard_api/

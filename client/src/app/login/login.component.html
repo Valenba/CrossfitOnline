@@ -1,11 +1,33 @@
-<form #form = "ngForm">
-  <h2> Login </h2>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="username" name="username"/>
-  <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="password" name="password"/>
+<div class="login-wrapper">
+  <form class="login" #form="ngForm">
+    <section class="title">
+      <h1 class="welcome">Welcome to</h1>
+      <h2>The first Crossfit online competition</h2>
+      <h3 class="hint">Use your Google account to sign in or create one now</h3>
+    </section>
+    <div class="login-group">
+      <div class="auth-source select">
+        <select id="login-auth-source-1">
+          <option>Local Users</option>
+          <option>Administrator</option>
+        </select>
+      </div>
+      <input class="username" type="text" [(ngModel)]="username" name="username" id="login_username" placeholder="Username">
+      <input class="password" type="password" [(ngModel)]="password" name="password" id="login_password" placeholder="Password">
+      <div class="checkbox">
+        <input type="checkbox" id="rememberme">
+        <label for="rememberme">
+          Remember me
+        </label>
+      </div>
+      <div class="error inactive">
+        Invalid user name or password
+      </div>
+      <button (click)="login(username,password,form)" type="submit" class="btn btn-default">NEXT</button><br>
+      <button (click)="socialLogin('google')"  class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></button>
+      <a [routerLink]="['/signup']" class="signup">Sign up for a Company ID</a>
+    </div>
+  </form>
+</div>
 
-  <button (click)="login(username,password,form)"> login </button>
-</form>
-<p class="error"> {{ error }} </p>
+
