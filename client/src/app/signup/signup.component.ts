@@ -17,6 +17,10 @@ const {BASEURL} = environment;
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  username:any;
+  password:any;
+  email:any;
+  error:any;
 
   uploader: FileUploader = new FileUploader({
     url: `${BASEURL}/api/signup`,

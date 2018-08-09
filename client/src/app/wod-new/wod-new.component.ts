@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./wod-new.component.scss']
 })
 export class WodNewComponent implements OnInit {
+  title:any;
+  video:any;
+  wodNumber:any;
+  exer:any;
   name: any;
   newCompetition = {
     title: '',

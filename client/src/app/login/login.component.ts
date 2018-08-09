@@ -13,6 +13,8 @@ import {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  username:any;
+  password:any;
 
   constructor(private sessionService:SessionService,private socialAuthService: AuthService, private router:Router) { }
 
