@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "../../../node_modules/@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { CompetitionService } from "../../services/competition.service";
 
 @Component({
@@ -25,6 +25,7 @@ export class WodComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.competitionService.get(params.id).subscribe(wod => {
         this.wod = wod;
+        console.log(this.wod)
       });
     });
   }

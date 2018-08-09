@@ -7,6 +7,8 @@ import { CompetidoresComponent } from './competidores/competidores.component';
 import { InformationComponent } from './information/information.component';
 import { WodComponent } from './wod/wod.component';
 import { WodNewComponent } from './wod-new/wod-new.component';
+import { VideoExerciseComponent } from './videoExercise/videoExercise.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -19,6 +21,8 @@ export const routes: Routes = [
   { path:'information', component:InformationComponent},
   { path:'wod/:id', component:WodComponent},
   { path: 'new', component: WodNewComponent},
+  { path: 'exercise', component: VideoExerciseComponent},
+  { path: 'profile', component: ProfileComponent}
 
   //Youtube:AIzaSyBhtaKmsGu2d3zHkQeGK6vx9niDgnZkYNo
   //Crossfit API: https://www.reddit.com/r/crossfit/comments/7vfe5d/crossfit_open_leaderboard_api/

@@ -3,7 +3,7 @@ import { Http, Response } from "@angular/http";
 import { environment } from '../environments/environment';
 
 import {map, catchError} from 'rxjs/operators';
-import { Observable } from "../../node_modules/rxjs";
+import { Observable } from "rxjs";
 import { of } from 'rxjs';
 
 
@@ -75,6 +75,9 @@ export class SessionService {
       }),
       catchError( e => of(this.errorHandler(e)))
     )
+  }
+  profile(){
+    
   }
 
 }

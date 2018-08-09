@@ -14,6 +14,7 @@ const passport = require("passport");
 const configure = require("./config/passport.js");
 const cors = require("cors");
 
+
 mongoose.connect("mongodb://localhost/crossfit");
 
 const app = express();
@@ -37,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 var whitelist = ["http://localhost:4200"];
 var corsOptions = {
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
     callback(null, originIsWhitelisted);
   },
@@ -62,14 +63,19 @@ const index = require("./routes/index");
 app.use("/", index);
 
 const api = require("./routes/api/authentication.controller")
-app.use("/api",api)
+app.use("/api", api)
 
 const competition = require("./routes/api/competition.controller")
-app.use("/api/competition",competition)
+app.use("/api/competition", competition)
 
 const information = require("./routes/api/information.controller")
-app.use("/api/information",information)
+app.use("/api/information", information)
 
+const videoExercise = require("./routes/api/tagVideo.controller")
+app.use("/api/tagVideo", videoExercise)
+
+const spotify = require("./routes/api/spotify.controller")
+app.use("/api/spotify", spotify)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

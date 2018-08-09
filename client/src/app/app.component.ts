@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SessionService } from '../services/session.service';
-import { Router } from '../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 
 
 

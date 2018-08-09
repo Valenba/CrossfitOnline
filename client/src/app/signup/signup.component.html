@@ -8,8 +8,10 @@
   <br>
   <label> Email </label>
   <input type="text" [(ngModel)]="email" name="email"/>
+  <br>
+  <label> Photo </label>
+  <input type="file" name="file" ng2FileSelect [uploader]='uploader'/>
  
-
   <button (click)="signup(username, password,email)"> SIGNUP </button>
   <h1>
       Sign in

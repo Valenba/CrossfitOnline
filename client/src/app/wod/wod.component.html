@@ -1,13 +1,16 @@
 <div id="app"></div>
 <h1> Detalles del WOD</h1>
-<a [routerLink]="['']"> Volver a home </a>
-
 <div *ngIf="wod">
-  <h2> {{ wod.title }}&nbsp;</h2>
-  <h3> {{ wod.wod[0].wodNumber }} </h3>
-  <div class="wod-info" *ngFor="let wod of wod.wod">
-      <iframe [src]="wod.video | safe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <button (click)="deleteWod()"> Borrar WOD </button>
+    <h2> {{ wod.title }}&nbsp;</h2>
+    <h3> {{ wod.wod[0].wodNumber }} </h3>
+    <div class="wod-info" *ngFor="let wod of wod.wod">
+        <iframe [src]="wod.video | safe" width="1100" height="500" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="exerc-info" *ngFor="let exercise of wod.exercises">
+        <iframe [src]="exercise.url | safe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <iframe src="https://open.spotify.com/embed/user/raulvalen/playlist/4qjvnc5hTIDTGtyNEq2H06" width="300" height="380" frameborder="0"
+        allowtransparency="true"></iframe>
+    <button (click)="deleteWod()"> Borrar WOD </button>
+    <a [routerLink]="['']"> Volver a home </a>
 </div>
-

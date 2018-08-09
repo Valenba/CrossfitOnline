@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompetitionService } from '../../services/competition.service';
-import { Router } from '../../../node_modules/@angular/router';
+import { VideoExerciseService } from '../../services/videoExercise.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'wod-new',
@@ -8,23 +9,27 @@ import { Router } from '../../../node_modules/@angular/router';
   styleUrls: ['./wod-new.component.scss']
 })
 export class WodNewComponent implements OnInit {
-
+  name: any;
   newCompetition = {
     title: '',
-    wod:[]
+    wod:[],
+    exer:[]
   };
+
   
-  constructor(private competitionService: CompetitionService, private router:Router) { }
+  constructor(private competitionService: CompetitionService, private execiseService : VideoExerciseService, private router:Router) { }
 
   ngOnInit() {
+      this.execiseService.getList().subscribe(exercises=>(this.name = exercises))
+    
   }
 
-  submit(title,video,wodNumber) {
+  submit(title,video,wodNumber, exer) {
     this.newCompetition.title = title;
     this.newCompetition.wod.push({video:video, wodNumber:Number(wodNumber)})
-    console.log()
+    this.newCompetition.exer = exer;
+    console.log(exer)
     this.competitionService.newCompetition(this.newCompetition).subscribe(() => this.router.navigate(["/areaCompetidores"]))
-  }
-
+  } 
 
 }

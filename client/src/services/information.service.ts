@@ -18,7 +18,13 @@ export class InformationService {
   getByName(name) {
     return this.http
       .get(`${this.BASE_URL}/api/information/${name}`)
-      .pipe(map(res => {this.athletes =res.json();
+      .pipe(map(res => {res.json().forEach(element => {
+        if(element.entrant.firstName == name){
+          console.log(element.scores)
+          
+        this.athletes.push(element.scores);
+        }
+      }); 
       return this.athletes}));
   }
 }

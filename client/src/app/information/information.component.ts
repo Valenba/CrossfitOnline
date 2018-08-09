@@ -8,7 +8,7 @@ import { InformationService } from '../../services/information.service';
 })
 export class InformationComponent implements OnInit {
   information: Array<Object>;
-
+  name;
   constructor(private informationService : InformationService) { 
   }
   
@@ -16,6 +16,8 @@ export class InformationComponent implements OnInit {
 
   }
   athletes(name){
+   
     this.informationService.getByName(name).subscribe(athletes=>(this.information = athletes))
+    
   }
 }

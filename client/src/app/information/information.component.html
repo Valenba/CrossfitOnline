@@ -2,7 +2,9 @@
 <label> Name of athlete </label>
 <ul *ngIf="information">  
   <li *ngFor= "let athlete of information">
-    {{athlete.name}} -- {{athlete.affiliate}}
+    {{athlete.rank}}
+    <!-- {{athlete.}}
+    {{athlete.}} -->
   </li>
 </ul>
 <button (click)="athletes(name)" id="crossfitButton">Get Athletes!</button>

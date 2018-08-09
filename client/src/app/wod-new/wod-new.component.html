@@ -1,15 +1,18 @@
 <h1> Añade una nueva competición </h1>
 <a [routerLink]="['/areaCompetidores']"> Vuelve a la lista</a>
+<form>
+    <label> Tìtulo: </label>
+    <input type="text" [(ngModel)] = "title" name="title" required />
 
-<form #form = "ngForm">
-    <label> Tìtulo </label>
-    <input type="text" #title name="title" required />
-
-    <label> Vídeo explicativo </label>
-    <input type="text" #video name="video" />
+    <label> Vídeo explicativo: </label>
+    <input type="text" [(ngModel)]="video" name="video"/>
 
     <label> Número de Wod: </label>
-    <input type="number"  #wodNumber name="wodNumber" required/>
+    <input type="number"  [(ngModel)] ="wodNumber" name="wodNumber" required/>
+    
+    <label> Ejercicios </label>
+    <div  class="exercise" *ngFor="let exercises of name"></div>
+    <select [(ngModel)]="exer" name="exer" multiple size="exercise.length"> <option  *ngFor="let exercises of name" value="{{exercises._id}}">{{exercises.exercise}} </option> </select>
 
-  <button (click)="submit(title.value, video.value, wodNumber.value)"> Guardar </button>
+  <button (click)="submit(title, video, wodNumber, exer)"> Guardar </button>
 </form>

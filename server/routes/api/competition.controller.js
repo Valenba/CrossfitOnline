@@ -5,15 +5,17 @@ const Competition = require('../../models/competition');
 // Retrive ALL
 router.get("/", (req, res, next) => {
   Competition.find()
+    .populate("exercises")
     .then(objects => res.json(objects))
     .catch(e => next(e));
 });
 
 // Create
 router.post("/", (req, res, next) => {
-  const { title, video, wod } = req.body;
+  const { title, wod, exer } = req.body;
 
-  const newCompetition = { title, video, wod };
+  const newCompetition = { title, wod };
+  newCompetition.exercises = exer;
 
   newCompetition.wod[0].video = newCompetition.wod[0].video.replace('watch?v=', 'embed/');
   console.log(newCompetition.video);
@@ -27,8 +29,11 @@ router.post("/", (req, res, next) => {
 // Retrive DETAIL
 router.get("/:id", (req, res, next) => {
   Competition.findById(req.params.id)
-    .then(object => {console.log(object)
-      res.json(object)})
+    .populate("exercises")
+    .then(object => {
+      console.log(object)
+      res.json(object)
+    })
     .catch(e => next(e));
 });
 
