@@ -15,7 +15,7 @@ const configure = require("./config/passport.js");
 const cors = require("cors");
 
 
-mongoose.connect("mongodb://localhost/crossfit");
+mongoose.connect(process.env.DBURL);
 
 const app = express();
 
