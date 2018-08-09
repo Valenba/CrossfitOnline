@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
 import { map } from 'rxjs/operators';
+import { environment } from '../environments/environment';
+
+const {BASEURL} = environment;
 
 @Injectable({
   providedIn: 'root'
 })
 export class InformationService {
-  BASE_URL: string = "http://localhost:3000";
+  BASE_URL: string = BASEURL;
   athletes=[];
   constructor(private http: Http) {}
 
