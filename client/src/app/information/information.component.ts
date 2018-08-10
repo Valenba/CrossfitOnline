@@ -21,7 +21,7 @@ export class InformationComponent implements OnInit {
     
 
   }
-  athletes(name){
+  athletes(name,names){
    
     this.informationService.getByName(this.name1).subscribe(athletes=>{(this.information = athletes.splice(0))
     this.informationService.getByName(this.name2).subscribe(athletes=>{(athletes.forEach(e=>{
