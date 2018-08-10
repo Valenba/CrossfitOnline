@@ -85,13 +85,6 @@ router.get("/loggedin", function (req, res) {
   return res.status(403).json({ message: 'Unauthorized' });
 });
 
-// router.get("/", (req, res, next) => {
-//   User.findById(req.user._id)
-//     .then(object => {
-//       console.log(object)
-//       res.json(object)
-//     })
-//     .catch(e => next(e));
-// });
+
 
 module.exports = router;

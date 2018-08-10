@@ -1,18 +1,29 @@
+<div class="form">
+<div class="cont">
 <h1> Añade una nueva competición </h1>
-<a [routerLink]="['/areaCompetidores']"> Vuelve a la lista</a>
+<button class="btn btn-success-outline" [routerLink]="['/areaCompetidores']">Vuelve a la lista</button>
 <form>
-    <label> Tìtulo: </label>
-    <input type="text" [(ngModel)] = "title" name="title" required />
+  <label> Tìtulo: </label>
+  <input type="text" [(ngModel)]="title" name="title" required />
 
-    <label> Vídeo explicativo: </label>
-    <input type="text" [(ngModel)]="video" name="video"/>
+  <label> Vídeo explicativo: </label>
+  <input type="text" [(ngModel)]="video" name="video" />
 
-    <label> Número de Wod: </label>
-    <input type="number"  [(ngModel)] ="wodNumber" name="wodNumber" required/>
-    
-    <label> Ejercicios </label>
-    <div  class="exercise" *ngFor="let exercises of name"></div>
-    <select [(ngModel)]="exer" name="exer" multiple size="exercise.length"> <option  *ngFor="let exercises of name" value="{{exercises._id}}">{{exercises.exercise}} </option> </select>
+  <label> Número de Wod: </label>
+  <input type="number" [(ngModel)]="wodNumber" name="wodNumber" required/>
 
+  <div class="exercise" *ngFor="let exercises of name"></div>
+  <section class="form-block">
+    <div class="form-group">
+      <label for="selects_5">Multi Select</label>
+      <div class="select multiple">
+        <select id="selects_5" [(ngModel)]="exer" name="exer" multiple size="exercise.length">
+          <option *ngFor="let exercises of name" value="{{exercises._id}}">{{exercises.exercise}} </option>
+        </select>
+      </div>
+    </div>
+  </section>
   <button (click)="submit(title, video, wodNumber, exer)"> Guardar </button>
 </form>
+</div>
+</div>

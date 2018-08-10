@@ -1,16 +1,34 @@
-<div id="app"></div>
+<div id="app">
 <h1> Detalles del WOD</h1>
 <div *ngIf="wod">
-    <h2> {{ wod.title }}&nbsp;</h2>
-    <h3> {{ wod.wod[0].wodNumber }} </h3>
+    <div class="alert alert-dark" role="alert">
+        <h2>{{ wod.title }}</h2>
+    </div>
+    <h3> WOD número: {{ wod.wod[0].wodNumber }} </h3><br>
+    <button class= "button"(click)="deleteWod()"> Borrar WOD </button>
     <div class="wod-info" *ngFor="let wod of wod.wod">
         <iframe [src]="wod.video | safe" width="1100" height="500" frameborder="0" allowfullscreen></iframe>
     </div>
-    <div class="exerc-info" *ngFor="let exercise of wod.exercises">
-        <iframe [src]="exercise.url | safe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    <div class="clr-row">
+        <div class="clr-col-4">
+            <div class="exerc-info" *ngFor="let exercise of wod.exercises">
+                    <div class="text">
+                    <h2>{{ exercise.exercise }}</h2>
+            </div>
+
+                <iframe class="ifr" [src]="exercise.url | safe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                
+                
+            </div>
+            <iframe class="ifr1" src="https://open.spotify.com/embed/user/raulvalen/playlist/4qjvnc5hTIDTGtyNEq2H06" width="300" height="380"
+                frameborder="0" allowtransparency="true"></iframe>
+        </div>
+        
     </div>
-    <iframe src="https://open.spotify.com/embed/user/raulvalen/playlist/4qjvnc5hTIDTGtyNEq2H06" width="300" height="380" frameborder="0"
-        allowtransparency="true"></iframe>
-    <button (click)="deleteWod()"> Borrar WOD </button>
-    <a [routerLink]="['']"> Volver a home </a>
+    <button class="btn btn-success-outline" [routerLink]="['']">Volver a home</button>
+        <br><br>
+        <button class="btn btn-success-outline" [routerLink]="['/areaCompetidores']"> Vuelve a la lista de competiciones</button>
 </div>
+</div>
+
+    

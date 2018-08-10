@@ -18,14 +18,13 @@ export class InformationService {
       .get(`${this.BASE_URL}/api/information`)
       .pipe(map(res => res.json()));
   }
-  getByName(name) {
+  getByName(name1) {
     return this.http
-      .get(`${this.BASE_URL}/api/information/${name}`)
+      .get(`${this.BASE_URL}/api/information/${name1}`)
       .pipe(map(res => {res.json().forEach(element => {
-        if(element.entrant.firstName == name){
-          console.log(element.scores)
+        if(element.entrant.firstName == name1){
           
-        this.athletes.push(element.scores);
+        this.athletes.push(element);
         }
       }); 
       return this.athletes}));

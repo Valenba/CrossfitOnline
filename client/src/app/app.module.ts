@@ -13,6 +13,8 @@ import { InformationComponent } from './information/information.component';
 import { WodComponent } from './wod/wod.component';
 import { WodNewComponent } from './wod-new/wod-new.component';
 import { SafePipe } from './safe.pipe';
+import { ClarityModule } from '@clr/angular';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { VideoExerciseComponent } from './videoExercise/videoExercise.component';
 import {
   SocialLoginModule,
@@ -57,7 +59,9 @@ return config;
       FormsModule,
       SocialLoginModule,
       FormsModule,
-      FileUploadModule
+      FileUploadModule,
+      ClarityModule,
+      BrowserAnimationsModule
   ],
   providers: [
     {

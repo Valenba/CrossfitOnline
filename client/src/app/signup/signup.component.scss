@@ -1,0 +1,29 @@
+.form{
+    display: grid;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+.social{
+    background-color: #db5a3c;
+}
+.signup{
+    margin-top: 100px;
+    background-color: #32f983;
+}
+.badge{
+    height: 25px;
+    font-size: 20px;
+    background-color: #f9d132;
+}
+div{
+    background-image: url("../../assets/img/fondo.jpeg");
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+h2{
+    margin-top: 100px;
+}
+.input, h1, h2, .file{
+color: white;
+}

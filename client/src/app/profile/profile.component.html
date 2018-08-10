@@ -1,5 +1,26 @@
 <div *ngIf="user">
-  <h2> {{ user.username }}</h2>
-  <h2> {{ user.email }} </h2>
-  <h2><img src="{{ user.photo }}"></h2>
+  <div class="body">
+    <div class="wrapper">
+      <div id="card-container">
+        <img id="card-photo" src="{{ user.photo }}" />
+        <div class="card-content">
+          <h1>Perfil competidor</h1>
+          <h3> {{ user.username }}</h3>
+          <h3> {{ user.email }} </h3>
+          <br>
+          <button class="btn btn-success-outline" [routerLink]="['/areaCompetidores']">Ir a la lista</button>
+        </div>
+        <!-- end of card-content -->
+        <div id="social-buttons">
+          <img src="http://cdn.flaticon.com/png/256/8730.png" class="share-btn" />
+          <img src="http://cdn.flaticon.com/png/256/10033.png" class="share-btn" />
+          <img src="http://cdn.flaticon.com/png/256/69444.png" class="share-btn" />
+
+        </div>
+      </div>
+      <!-- card-container -->
+    </div>
+    <!-- wrapper -->
   </div>
+
+</div>

@@ -1,11 +1,14 @@
+<div class="cont">
 <h1>Crossfit info</h1>
 <label> Name of athlete </label>
-<ul *ngIf="information">  
-  <li *ngFor= "let athlete of information">
-    {{athlete.rank}}
-    <!-- {{athlete.}}
-    {{athlete.}} -->
-  </li>
-</ul>
-<button (click)="athletes(name)" id="crossfitButton">Get Athletes!</button>
-<input type="text" [(ngModel)]="name" name="name">
+<button (click)="athletes(name1,name2)" id="crossfitButton">Get Athletes!</button>
+<input type="text" [(ngModel)]="name1" name="name1">
+<input type="text" [(ngModel)]="name2" name="name2">
+
+  <div [hidden]="!chart">
+          <div id="canvas-container" class="chart-container" style=" height:25vh; width:100%">
+              
+      <canvas id="canvas">{{ chart }}</canvas>
+      </div>
+    </div>
+    </div>
